@@ -25,7 +25,7 @@ const RecipeCard = ({recipe, onToggleMyRecipe, isInMyRecipes}) => {
             </div>
             
 
-            <button type="button" className="btn btn-success" onClick={onToggleMyRecipe}>
+            <button type="button" className={`btn ${isInMyRecipes ? 'btn-danger' : 'btn-success'}`} onClick={onToggleMyRecipe}>
                 {isInMyRecipes ? 'Remove from My Recipes' : 'Add to My Recipes'}
             </button>
         </div>

@@ -99,7 +99,7 @@ function App() {
               <Sort onSortChange={setSortOrder} />
             </div>
 
-            <div className="col-md-4 d-flex align-items-center justify-content-center">
+            <div className="reset-box col-md-4 d-flex align-items-center justify-content-center">
               <button className="btn btn-secondary" onClick={resetFiltersAndSorting}>Reset Filters and Sorting</button>
             </div>
           </div>
@@ -133,13 +133,13 @@ function App() {
                 <ul>
                   {myRecipes.map(recipe => (
                     <li key={recipe.id} className="recipe-item"> {/* Style each list item */}
-                      {recipe.title} - {recipe.cuisine} - {recipe.dietaryPreference.join(', ')}
+                      {recipe.title}: {recipe.cuisine}, {recipe.dietaryPreference.join(', ')}
                     </li>
                     ))}
                 </ul>
               </div>
             ) : (
-              <p>You have not added any recipes yet!</p>
+              <p className="empty-message">You have not added any recipes yet!</p>
             )}
           </div>
 

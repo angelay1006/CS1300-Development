@@ -1,4 +1,15 @@
 import ceviche from '../assets/ceviche.jpg';
+import hongshaorou from '../assets/hongshaorou.jpeg';
+import vegan_marinara from '../assets/vegan_marinara.jpeg';
+import bolognese from '../assets/bolognese.jpeg';
+import vegetarian_fr from '../assets/veg_friedrice.jpeg';
+import papa from '../assets/papa.jpeg';
+import arroz_con_pato from '../assets/arroz_con_pato.jpeg';
+import chicken_vesuvio from '../assets/chicken_vesuvio.jpeg';
+import gelato from '../assets/gelato.jpeg';
+import tomato_egg from '../assets/tomato_egg.jpeg';
+import veg_dumplings from '../assets/veg_dumplings.jpeg';
+import vegan_charsiubao from '../assets/charsiubao.jpeg';
 
 const recipes = [
     {
@@ -15,7 +26,7 @@ const recipes = [
         dietaryPreference: ['Gluten-Free'],
         cuisine: 'Chinese',
         prepTime: 150,
-        imageUrl: ceviche,
+        imageUrl: hongshaorou,
     },
     {
         id: 3,
@@ -23,7 +34,7 @@ const recipes = [
         dietaryPreference: ['Vegan', 'Vegetarian'],
         cuisine: 'Italian',
         prepTime: 45,
-        imageUrl: ceviche,
+        imageUrl: vegan_marinara,
     },
     {
         id: 4,
@@ -31,7 +42,7 @@ const recipes = [
         dietaryPreference: ['Gluten-Free'],
         cuisine: 'Italian',
         prepTime: 40,
-        imageUrl: ceviche,
+        imageUrl: bolognese,
     },
     {
         id: 5,
@@ -39,7 +50,7 @@ const recipes = [
         dietaryPreference: ['Vegetarian'],
         cuisine: 'Chinese',
         prepTime: 25,
-        imageUrl: ceviche,
+        imageUrl: vegetarian_fr,
     },
     {
         id: 6,
@@ -47,7 +58,7 @@ const recipes = [
         dietaryPreference: ['Vegetarian'],
         cuisine: 'Peruvian',
         prepTime: 35,
-        imageUrl: ceviche,
+        imageUrl: papa,
     }, 
     {
         id: 7, 
@@ -55,7 +66,7 @@ const recipes = [
         dietaryPreference: ['Gluten-Free'],
         cuisine: 'Peruvian',
         prepTime: 50,
-        imageUrl: ceviche,
+        imageUrl: arroz_con_pato,
     }, 
     {
         id: 8,
@@ -63,7 +74,7 @@ const recipes = [
         dietaryPreference: ['Gluten-Free'],
         cuisine: 'Italian',
         prepTime: 80,
-        imageUrl: ceviche,
+        imageUrl: chicken_vesuvio,
     }, 
     {
         id: 9,
@@ -71,7 +82,7 @@ const recipes = [
         dietaryPreference: ['Vegetarian', 'Gluten-Free'],
         cuisine: 'Italian',
         prepTime: 60,
-        imageUrl: ceviche,
+        imageUrl: gelato,
     },
     {
         id: 10,
@@ -79,7 +90,7 @@ const recipes = [
         dietaryPreference: ['Vegetarian', 'Gluten-Free'],
         cuisine: 'Chinese',
         prepTime: 45, 
-        imageUrl: ceviche,
+        imageUrl: tomato_egg,
     }, 
     {
         id: 11, 
@@ -87,7 +98,7 @@ const recipes = [
         dietaryPreference: ['Vegan', 'Vegetarian'],
         cuisine: 'Chinese', 
         prepTime: 90,
-        imageUrl: ceviche,
+        imageUrl: veg_dumplings,
     }, 
     {
         id: 12, 
@@ -95,7 +106,7 @@ const recipes = [
         dietaryPreference: ['Vegan', 'Vegetarian'],
         cuisine: 'Chinese',
         prepTime: 130,
-        imageUrl: ceviche
+        imageUrl: vegan_charsiubao
     }
 ]
 

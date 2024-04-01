@@ -9,13 +9,42 @@
 }
 
 .recipe-count-box {
-  background-color: #E4E7EF; /* Light grey background, you can choose any color */
+  background-color: #426B69; /* Light grey background, you can choose any color */
   padding: 10px;
   margin-top: 20px; /* Adjust as needed */
   border-radius: 10px; /* Optional: for rounded corners */
   text-align: center; /* Centers the text */
   font-size: 30px;
+  color: white;
 }
+
+.recipe-list-box {
+  background-color: #C7D3BF; /* Light grey background, choose color as per your design */
+  padding: 15px;
+  margin-top: 20px; /* Adjust as needed */
+  border-radius: 5px; /* Optional: for rounded corners */
+  border: 1px solid #ccc; /* Optional: adds a light border */
+  max-width: 75%; /* Adjust the width as per your design */
+  margin: 20px auto; /* Center the box horizontally */
+}
+
+.recipe-item {
+  padding: 5px 0; /* Add some vertical padding to each item for spacing */
+  list-style-type: none; /* Removes bullet points from list items */
+  font-weight: bold;
+}
+
+.empty-message {
+  padding-top: 20px;
+}
+
+.reset-box {
+  background-color: #E4E7EF;
+  border: 1px solid #ccc; 
+  padding: 20px; 
+  border-radius: 10px;
+}
+
 
 
 
