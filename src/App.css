@@ -1,16 +1,22 @@
 .main-content {
   padding-top: 100px;
-  padding-left: 30px;
 }
 
 .heading-fonts {
   font-size: 40px;
+  margin: auto;
+  padding-top: 20px;
 }
 
-/* .col-md-4 {
-  display: flex;
-  align-items: center;
-} */
+.recipe-count-box {
+  background-color: #E4E7EF; /* Light grey background, you can choose any color */
+  padding: 10px;
+  margin-top: 20px; /* Adjust as needed */
+  border-radius: 10px; /* Optional: for rounded corners */
+  text-align: center; /* Centers the text */
+  font-size: 30px;
+}
+
 
 
 

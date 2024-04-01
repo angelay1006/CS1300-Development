@@ -4,10 +4,7 @@ import recipes from './components/Recipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import FilterComponent from './components/Filter';
-import Sort from './components/Sort'; // Import the Sort component
-
-
-
+import Sort from './components/Sort'; 
 
 
 
@@ -21,9 +18,26 @@ function App() {
   const [selectedCuisines, setSelectedCuisines] = useState([]);
   const [selectedDietaryPreferences, setSelectedDietaryPreferences] = useState([]);
 
+  // reset
+  const resetFiltersAndSorting = () => {
+    setSelectedCuisines([]); // Reset selected cuisines
+    setSelectedDietaryPreferences([]); // Reset selected dietary preferences
+    setSortOrder('default'); // Reset sort order to default
+  };
 
-  const handleSortChange = (newSortOrder) => {
-    setSortOrder(newSortOrder);
+  // recipe book
+  const [myRecipes, setMyRecipes] = useState([]);
+  const toggleRecipeInMyBook = (recipe) => {
+    setMyRecipes(currentRecipes => {
+      const isRecipePresent = currentRecipes.some(r => r.id === recipe.id);
+      if (isRecipePresent) {
+        // remove recipe if already in myrecipebook
+        return currentRecipes.filter(r => r.id !== recipe.id);
+      } else {
+        // add recipe if not in myrecipebook
+        return [...currentRecipes, recipe];
+      }
+    })
   };
 
 
@@ -61,44 +75,76 @@ function App() {
 
 
 
-
   return (
     <div className="app">
       <Header />
 
       <div className="main-content">
-        <h1 className="heading-fonts"> Available Recipes </h1>
-
-
+        
         {/* row for filter and sorting */}
         <div className="container">
           <div className="row mt-4">
+              <h1 className="heading-fonts"> Available Recipes </h1>
+          </div>
+          <div className="row mt-4">
             <div className="col-md-4">
-              <FilterComponent onFilterChange={handleFilterChange} className="w-100"/>
+              <FilterComponent 
+                onFilterChange={handleFilterChange} 
+                selectedCuisines={selectedCuisines}
+                selectedDietaryPreferences={selectedDietaryPreferences}
+                className="w-100"/>
             </div>
 
             <div className="col-md-4 d-flex align-items-center justify-content-center">
               <Sort onSortChange={setSortOrder} />
             </div>
+
+            <div className="col-md-4 d-flex align-items-center justify-content-center">
+              <button className="btn btn-secondary" onClick={resetFiltersAndSorting}>Reset Filters and Sorting</button>
+            </div>
           </div>
 
+        {/* row for cards */}
+          <div className="row mt-4">
+            {filteredRecipes.map((recipe) => (
+              <div className="col-md-4" key={recipe.id}>
+                <RecipeCard
+                  recipe={recipe}
+                  onToggleMyRecipe={() => toggleRecipeInMyBook(recipe)}
+                  isInMyRecipes={myRecipes.some(r => r.id === recipe.id)}
+                />
+              </div>
+            ))}
+          </div>
 
-            <div className="row mt-4">
-              {filteredRecipes.map((recipe) => (
-                <div className="col-md-4" key={recipe.id}>
-                  <RecipeCard
-                    recipe={recipe}
-                    onActionClick={() => console.log(`Action clicked for recipe with id: ${recipe.id}`)}
-                    isInMyRecipes={false}
-                  />
-                </div>
-              ))}
+          <div className="row mt-10">
+            <h1 className="heading-fonts"> My Recipe Book </h1>
+          </div>
+
+          <div className="my-recipe-book">
+            <div className="recipe-count-box">
+              Total Recipes: <span className="recipe-count">{myRecipes.length}</span>
             </div>
+
+            
+
+            {myRecipes.length > 0 ? (
+              <div className="recipe-list-box"> {/* Wrap recipes in styled box */}
+                <ul>
+                  {myRecipes.map(recipe => (
+                    <li key={recipe.id} className="recipe-item"> {/* Style each list item */}
+                      {recipe.title} - {recipe.cuisine} - {recipe.dietaryPreference.join(', ')}
+                    </li>
+                    ))}
+                </ul>
+              </div>
+            ) : (
+              <p>You have not added any recipes yet!</p>
+            )}
+          </div>
 
           </div>
         </div>
-
-
       </div>
 
   );

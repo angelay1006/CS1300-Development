@@ -2,10 +2,7 @@ import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import './Filter.css';
 
-const FilterComponent = ({onFilterChange}) => {
-    const [selectedCuisines, setSelectedCuisines] = useState([]);
-    const [selectedDietaryPreferences, setSelectedDietaryPreferences] = useState([])
-
+const FilterComponent = ({onFilterChange, selectedCuisines, selectedDietaryPreferences}) => {
     const handleCuisineChange = (e) => {
         const newCuisines = e.target.checked
         // if checkbox is checked
@@ -13,7 +10,6 @@ const FilterComponent = ({onFilterChange}) => {
         // if checkbox is unchecked
         : selectedCuisines.filter(cuisine => cuisine !== e.target.value);
 
-        setSelectedCuisines(newCuisines);
         onFilterChange(newCuisines, selectedDietaryPreferences)
     }
 
@@ -21,7 +17,8 @@ const FilterComponent = ({onFilterChange}) => {
         const newDietaryPreferences = e.target.checked 
         ? [...selectedDietaryPreferences, e.target.value]
         : selectedDietaryPreferences.filter(diet => diet !== e.target.value);
-        setSelectedDietaryPreferences(newDietaryPreferences);
+        
+
         onFilterChange(selectedCuisines, newDietaryPreferences);
     }
 
@@ -38,6 +35,7 @@ const FilterComponent = ({onFilterChange}) => {
                     id="dietary-preference-vegan"
                     onChange={handleDietaryChange}
                     value="Vegan"
+                    checked={selectedDietaryPreferences.includes('Vegan')}
                 />
                 <Form.Check
                     inline
@@ -47,6 +45,7 @@ const FilterComponent = ({onFilterChange}) => {
                     id="dietary-preference-vegetarian"
                     onChange={handleDietaryChange}
                     value="Vegetarian"
+                    checked={selectedDietaryPreferences.includes('Vegetarian')}
                 />
                 <Form.Check
                     inline
@@ -56,6 +55,7 @@ const FilterComponent = ({onFilterChange}) => {
                     id="dietary-preference-gluten-free"
                     onChange={handleDietaryChange}
                     value="Gluten-Free"
+                    checked={selectedDietaryPreferences.includes('Gluten-Free')}
                 />
             </div>
 
@@ -70,6 +70,7 @@ const FilterComponent = ({onFilterChange}) => {
                     id="cuisine-peruvian"
                     onChange={handleCuisineChange}
                     value="Peruvian"
+                    checked={selectedCuisines.includes('Peruvian')}
                 />
                 <Form.Check
                     inline
@@ -79,6 +80,7 @@ const FilterComponent = ({onFilterChange}) => {
                     id="cuisine-italian"
                     onChange={handleCuisineChange}
                     value="Italian"
+                    checked={selectedCuisines.includes('Italian')}
                 />
                 <Form.Check
                     inline
@@ -88,6 +90,7 @@ const FilterComponent = ({onFilterChange}) => {
                     id="cuisine-chinese"
                     onChange={handleCuisineChange}
                     value="Chinese"
+                    checked={selectedCuisines.includes('Chinese')}
                 />
             </div>
         </Form>

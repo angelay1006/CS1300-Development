@@ -2,7 +2,7 @@ import React from 'react';
 import './RecipeCard.css';
 
 
-const RecipeCard = ({recipe, onActionClick, isInMyRecipes}) => {
+const RecipeCard = ({recipe, onToggleMyRecipe, isInMyRecipes}) => {
     return (
         <div className="recipe-card">
             <img src={recipe.imageUrl} alt="foodpic" className="recipe-image" />
@@ -25,7 +25,7 @@ const RecipeCard = ({recipe, onActionClick, isInMyRecipes}) => {
             </div>
             
 
-            <button type="button" class="btn btn-success" onClick={() => onActionClick(recipe.id)}>
+            <button type="button" className="btn btn-success" onClick={onToggleMyRecipe}>
                 {isInMyRecipes ? 'Remove from My Recipes' : 'Add to My Recipes'}
             </button>
         </div>
