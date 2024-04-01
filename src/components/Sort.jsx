@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 const Sort = ({onSortChange}) => {
     return (
         <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-sort">
+            <Dropdown.Toggle variant="success" id="dropdown-sort" >
                 Sort by Prep Time
             </Dropdown.Toggle>
 

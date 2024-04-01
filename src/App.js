@@ -15,14 +15,23 @@ import './App.css';
 
 function App() {
 
-  // filter functionality
+  // filter functionality and sort
   const [filteredRecipes, setFilteredRecipes] = useState(recipes.slice(0, 12));
+  const [sortOrder, setSortOrder] = useState('default');
+  const [selectedCuisines, setSelectedCuisines] = useState([]);
+  const [selectedDietaryPreferences, setSelectedDietaryPreferences] = useState([]);
 
-  const filterRecipes = (selectedCuisines, selectedDietaryPreferences) => {
-    let newFilteredRecipes = recipes;
+
+  const handleSortChange = (newSortOrder) => {
+    setSortOrder(newSortOrder);
+  };
+
+
+  useEffect(() => {
+    let newFilteredRecipes = [...recipes];
 
     if (selectedCuisines.length) {
-      newFilteredRecipes = newFilteredRecipes.filter(recipe => 
+      newFilteredRecipes = newFilteredRecipes.filter(recipe =>
         selectedCuisines.includes(recipe.cuisine));
     }
 
@@ -32,13 +41,25 @@ function App() {
       );
     }
 
-    setFilteredRecipes(newFilteredRecipes.slice(0, 12)); // Keep the limit to 12 recipes
+    // Sorting logic
+    if (sortOrder === 'asc') {
+      newFilteredRecipes.sort((a, b) => a.prepTime - b.prepTime);
+    } else if (sortOrder === 'desc') {
+      newFilteredRecipes.sort((a, b) => b.prepTime - a.prepTime);
+    } 
+
+    setFilteredRecipes(newFilteredRecipes.slice(0, 12));
+
+  }, [sortOrder, selectedCuisines, selectedDietaryPreferences]);
+
+
+
+  const handleFilterChange = (cuisines, dietaryPreferences) => {
+    setSelectedCuisines(cuisines);
+    setSelectedDietaryPreferences(dietaryPreferences);
   }
 
-  // Mock function for handling recipe card actions
-  // const mockHandleActionClick = (recipeId) => {
-  //   console.log(`Action clicked for recipe with id: ${recipeId}`);
-  // };
+
 
 
   return (
@@ -47,16 +68,23 @@ function App() {
 
       <div className="main-content">
         <h1 className="heading-fonts"> Available Recipes </h1>
-        
-        
+
+
         {/* row for filter and sorting */}
         <div className="container">
-          <div className="row">
-            <div className="col-md-4"> 
-              <FilterComponent onFilterChange={filterRecipes} />
+          <div className="row mt-4">
+            <div className="col-md-4">
+              <FilterComponent onFilterChange={handleFilterChange} className="w-100"/>
             </div>
-          <div className="row">
-            {filteredRecipes.map((recipe) => (
+
+            <div className="col-md-4 d-flex align-items-center justify-content-center">
+              <Sort onSortChange={setSortOrder} />
+            </div>
+          </div>
+
+
+            <div className="row mt-4">
+              {filteredRecipes.map((recipe) => (
                 <div className="col-md-4" key={recipe.id}>
                   <RecipeCard
                     recipe={recipe}
@@ -65,14 +93,13 @@ function App() {
                   />
                 </div>
               ))}
-          </div>
-        
+            </div>
+
           </div>
         </div>
-        
-      
+
+
       </div>
-    </div>
 
   );
 }

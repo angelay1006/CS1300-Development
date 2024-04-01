@@ -3,7 +3,8 @@
     border: 1px solid #ccc; 
     padding: 20px; 
     border-radius: 10px; 
-    margin: 20px 0; 
+    /* margin: 20px 0;  */
+    /* width: 27vw; */
 }
 
 .form-label {
