@@ -19,18 +19,18 @@
 }
 
 .recipe-list-box {
-  background-color: #C7D3BF; /* Light grey background, choose color as per your design */
+  background-color: #E4E7EF; 
   padding: 15px;
-  margin-top: 20px; /* Adjust as needed */
-  border-radius: 5px; /* Optional: for rounded corners */
-  border: 1px solid #ccc; /* Optional: adds a light border */
-  max-width: 75%; /* Adjust the width as per your design */
-  margin: 20px auto; /* Center the box horizontally */
+  margin-top: 20px; 
+  border-radius: 5px;
+  border: 1px solid #ccc; 
+  max-width: 100%; 
+  margin: 20px auto;
 }
 
 .recipe-item {
-  padding: 5px 0; /* Add some vertical padding to each item for spacing */
-  list-style-type: none; /* Removes bullet points from list items */
+  padding: 5px 0; 
+  list-style-type: none; 
   font-weight: bold;
 }
 
@@ -43,6 +43,42 @@
   border: 1px solid #ccc; 
   padding: 20px; 
   border-radius: 10px;
+}
+
+.recipe-list-box .recipe-title {
+  font-weight: bold; 
+  color: #333; 
+  font-size: 1.1em;
+}
+
+.recipe-list-box .recipe-cuisine {
+  border-radius: 25px; 
+  margin-left: 10px;
+  display: inline-block; 
+  background-color: #8AA2DF;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.recipe-list-box .recipe-dietary {
+  border-radius: 25px; 
+  margin-left: 10px;
+  display: inline-block; 
+  background-color: #a2d5ab;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.recipe-list-box .recipe-preptime {
+  border-radius: 25px; 
+  margin-left: 10px;
+  display: inline-block; 
+  background-color: sandybrown;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  font-weight: normal;
 }
 
 

@@ -129,18 +129,25 @@ function App() {
             
 
             {myRecipes.length > 0 ? (
-              <div className="recipe-list-box"> {/* Wrap recipes in styled box */}
+              <div className="recipe-list-box">
                 <ul>
                   {myRecipes.map(recipe => (
-                    <li key={recipe.id} className="recipe-item"> {/* Style each list item */}
-                      {recipe.title}: {recipe.cuisine}, {recipe.dietaryPreference.join(', ')}
+                    <li key={recipe.id} className="recipe-item">
+                      <span className="recipe-title">{recipe.title}</span>
+                      <span className="recipe-cuisine"> {recipe.cuisine}</span>
+                      
+                    {recipe.dietaryPreference.map((preference, index) => (
+                      <span key={index} className="recipe-dietary"> {preference}</span>
+                  ))}
+                    <span className="recipe-preptime"> {recipe.prepTime} mins </span>
                     </li>
-                    ))}
+                  ))}
                 </ul>
               </div>
             ) : (
               <p className="empty-message">You have not added any recipes yet!</p>
             )}
+
           </div>
 
           </div>
