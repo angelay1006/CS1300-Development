@@ -57,15 +57,6 @@ const FilterComponent = ({onFilterChange}) => {
                     onChange={handleDietaryChange}
                     value="Gluten-Free"
                 />
-                <Form.Check
-                    inline
-                    label="Meat"
-                    name="dietary-preferences"
-                    type="checkbox"
-                    id="dietary-preference-meat"
-                    onChange={handleDietaryChange}
-                    value="Meat"
-                />
             </div>
 
 

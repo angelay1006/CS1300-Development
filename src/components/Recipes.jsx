@@ -12,7 +12,7 @@ const recipes = [
     {
         id: 2, 
         title: 'Hong Shao Rou',
-        dietaryPreference: ['Meat'],
+        dietaryPreference: ['Gluten-Free'],
         cuisine: 'Chinese',
         prepTime: 150,
         imageUrl: ceviche,
@@ -28,7 +28,7 @@ const recipes = [
     {
         id: 4,
         title: 'Bolognese',
-        dietaryPreference: ['Meat'],
+        dietaryPreference: ['Gluten-Free'],
         cuisine: 'Italian',
         prepTime: 40,
         imageUrl: ceviche,
@@ -52,7 +52,7 @@ const recipes = [
     {
         id: 7, 
         title: 'Arroz con Pato',
-        dietaryPreference: ['Meat'],
+        dietaryPreference: ['Gluten-Free'],
         cuisine: 'Peruvian',
         prepTime: 50,
         imageUrl: ceviche,
@@ -60,7 +60,7 @@ const recipes = [
     {
         id: 8,
         title: 'Chicken Vesuvio',
-        dietaryPreference: ['Meat', 'Gluten-Free'],
+        dietaryPreference: ['Gluten-Free'],
         cuisine: 'Italian',
         prepTime: 80,
         imageUrl: ceviche,
@@ -91,8 +91,8 @@ const recipes = [
     }, 
     {
         id: 12, 
-        title: 'Steamed Pork Buns',
-        dietaryPreference: ['Meat'],
+        title: 'Vegan Char Siu Bao',
+        dietaryPreference: ['Vegan', 'Vegetarian'],
         cuisine: 'Chinese',
         prepTime: 130,
         imageUrl: ceviche

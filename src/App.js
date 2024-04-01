@@ -4,6 +4,8 @@ import recipes from './components/Recipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import FilterComponent from './components/Filter';
+import Sort from './components/Sort'; // Import the Sort component
+
 
 
 
