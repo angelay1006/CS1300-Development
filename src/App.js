@@ -20,9 +20,9 @@ function App() {
 
   // reset
   const resetFiltersAndSorting = () => {
-    setSelectedCuisines([]); // Reset selected cuisines
-    setSelectedDietaryPreferences([]); // Reset selected dietary preferences
-    setSortOrder('default'); // Reset sort order to default
+    setSelectedCuisines([]); 
+    setSelectedDietaryPreferences([]); 
+    setSortOrder('default');
   };
 
   // recipe book
@@ -42,6 +42,7 @@ function App() {
 
 
   useEffect(() => {
+    // filtering logic
     let newFilteredRecipes = [...recipes];
 
     if (selectedCuisines.length) {
@@ -127,7 +128,7 @@ function App() {
             </div>
 
             
-
+            {/* if recipes are present */}
             {myRecipes.length > 0 ? (
               <div className="recipe-list-box">
                 <ul>
@@ -145,7 +146,7 @@ function App() {
                 </ul>
               </div>
             ) : (
-              <p className="empty-message">You have not added any recipes yet!</p>
+              <p className="empty-message"> You have not added any recipes yet!</p>
             )}
 
           </div>
