@@ -113,6 +113,7 @@ function App() {
                   recipe={recipe}
                   onToggleMyRecipe={() => toggleRecipeInMyBook(recipe)}
                   isInMyRecipes={myRecipes.some(r => r.id === recipe.id)}
+                  
                 />
               </div>
             ))}

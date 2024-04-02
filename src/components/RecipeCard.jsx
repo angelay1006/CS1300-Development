@@ -5,7 +5,7 @@ import './RecipeCard.css';
 const RecipeCard = ({recipe, onToggleMyRecipe, isInMyRecipes}) => {
     return (
         <div className="recipe-card">
-            <img src={recipe.imageUrl} alt="foodpic" className="recipe-image" />
+            <img src={recipe.imageUrl} alt={recipe.altText} className="recipe-image" />
             <h3 className="recipe-title"> {recipe.title} </h3>
 
             {/* there can be multiple dietary preferences */}
